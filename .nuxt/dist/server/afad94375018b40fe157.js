@@ -1,0 +1,1 @@
+exports.ids=[8],exports.modules={40:function(t,e,r){"use strict";r.r(e);var n={},o=r(1);var component=Object(o.a)(n,(function(){var t=this.$createElement;return(this._self._c||t)("div",[this._ssrNode(this._ssrEscape("\n    user "+this._s(this.$route.params.id)+"\n"))])}),[],!1,(function(t){}),null,"9e771802");e.default=component.exports}};
