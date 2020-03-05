@@ -10,8 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'YAFIG Frontend in NuxtJS' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'}
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
@@ -38,7 +37,8 @@ module.exports = {
   },
   modules: [
 	  '@nuxtjs/axios',
-	  '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'nuxt-buefy'
   ],
   axios: {
 	  baseURL: 'https://app.fakejson.com'
@@ -48,11 +48,14 @@ module.exports = {
       local: {
         endpoints: {
           login: {url: 'q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', method: 'post', propertyName: 'token'},
-          user: {url: 'q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', method: 'get', propertyName: 'user_name'},
+          user: {url: 'q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', method: 'get', propertyName: 'username'},
           logout: false
         }
       }
     }
-  }
+  },
+  plugins: [
+    {src: "~plugins/ga.js", mode: "client"}
+  ]
 }
 

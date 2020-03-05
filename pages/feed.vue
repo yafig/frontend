@@ -1,8 +1,7 @@
 <template>
-  <div>
-      This is feed page
-      <ScrollFeed/>
-  </div>
+  <section class="section">
+      <ScrollFeed :key="scrollFeed"/>
+  </section>
 </template>
 
 <script>

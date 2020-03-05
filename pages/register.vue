@@ -76,7 +76,7 @@ export default {
                     }
                 })
 
-                this.$router.push('/newsfeed')
+                this.$router.push('/feed')
             } catch (e) {
                 this.error = e.response.data.message
             }

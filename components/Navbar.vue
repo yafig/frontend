@@ -12,6 +12,7 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
+          <nuxt-link class="navbar-item" to="/why">Why?</nuxt-link>
           <template v-if="isAuthenticated">
           <nuxt-link class="navbar-item" to="/search">Search</nuxt-link>
           <div class="navbar-item has-dropdown is-hoverable">

@@ -9,7 +9,7 @@
                     <div class="field">
                           <label class='label'>Email</label>
                           <div class="control">
-                              <input type="enauk" class="input" name="email" v-model="email" required>
+                              <input type="email" class="input" name="email" v-model="email" required>
                           </div>
                     </div>
 
@@ -44,8 +44,8 @@ export default {
     },
     data() {
         return {
-        username: '',
-        password: ''
+            email: '',
+            password: ''
         }
     },
     methods: {
