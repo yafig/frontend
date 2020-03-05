@@ -19,8 +19,11 @@
         </template>
 
         <template slot="start">
-            <nuxt-link to="/search"><b-navbar-item>
+            <nuxt-link to="/search" v-if="isAuthenticated"><b-navbar-item>
                 Search
+            </b-navbar-item></nuxt-link>
+            <nuxt-link to="/why"><b-navbar-item>
+              Why?
             </b-navbar-item></nuxt-link>
         </template>
 
