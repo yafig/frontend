@@ -3,7 +3,7 @@
         <template slot="brand" v-if="isAuthenticated">
             <b-navbar-item tag="router-link" to="/feed">
                 <img
-                    src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                    src="~/assets/logo.png"
                     alt="Yet Another Free (OSS) Instagram-clone"
                 >
             </b-navbar-item>
@@ -12,7 +12,7 @@
         <template slot="brand" v-else>
             <b-navbar-item tag="router-link" to="/">
                 <img
-                    src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                    src="~/assets/logo.png"
                     alt="Yet Another Free (OSS) Instagram-clone"
                 >
             </b-navbar-item>
