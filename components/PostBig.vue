@@ -1,5 +1,7 @@
 <template>
   <div class="big-post">
+    <nuxt-link :to="'/p/' + id"><img :src="img"/></nuxt-link>
+    <br>
     Post id {{ id }}
     posted by <nuxt-link :to="'/u/' + userid">  {{ userid }}</nuxt-link>
   </div>
@@ -8,7 +10,7 @@
 <script>
 export default {
     name: "PostBig",
-    props: ["id", "userid"]
+    props: ["id", "userid", "img"]
 }
 </script>
 

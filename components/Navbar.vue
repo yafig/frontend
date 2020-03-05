@@ -1,39 +1,59 @@
 <template>
-  <nav class="navbar is-light">
-    <div class="container">
-      <div class="navbar-brand">
-        <nuxt-link class="navbar-item" to="/feed" v-if="isAuthenticated">YAFIG</nuxt-link>
-        <nuxt-link class="navbar-item" to="/" v-else>YAFIG</nuxt-link>
-        <button class="button navbar-burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <nuxt-link class="navbar-item" to="/why">Why?</nuxt-link>
-          <template v-if="isAuthenticated">
-          <nuxt-link class="navbar-item" to="/search">Search</nuxt-link>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              {{ loggedInUser }}
-            </a>
-            <div class="navbar-dropdown">
-              <nuxt-link class="navbar-item" to="/profile">My Profile</nuxt-link>
-              <hr class="navbar-divider">
-              <a class="navbar-item" @click='logout'>Logout</a>
-            </div>
-          </div>
-          </template>
-          <template v-else>
-            <nuxt-link class="navbar-item" to="/register">Register</nuxt-link>
-            <nuxt-link class="navbar-item" to="/login">Log In</nuxt-link>
-          </template>
-        </div>
-      </div>
-    </div>
-  </nav>
+      <b-navbar>
+        <template slot="brand" v-if="isAuthenticated">
+            <b-navbar-item tag="router-link" to="/feed">
+                <img
+                    src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                    alt="Yet Another Free (OSS) Instagram-clone"
+                >
+            </b-navbar-item>
+        </template>
+
+        <template slot="brand" v-else>
+            <b-navbar-item tag="router-link" to="/">
+                <img
+                    src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                    alt="Yet Another Free (OSS) Instagram-clone"
+                >
+            </b-navbar-item>
+        </template>
+
+        <template slot="start">
+            <nuxt-link to="/search"><b-navbar-item>
+                Search
+            </b-navbar-item></nuxt-link>
+        </template>
+
+        <template slot="end" v-if="isAuthenticated">
+            <b-navbar-item tag="div">
+                <div class="buttons">
+                    <nuxt-link to="/profile">
+                      <a class="button is-primary">
+                          <strong>My Profile</strong>
+                      </a></nuxt-link>
+                    <a class="button is-light" @click="logout">
+                        Log out
+                    </a>
+                </div>
+            </b-navbar-item>
+        </template>
+
+        <template slot="end" v-else>
+            <b-navbar-item tag="div">
+                <div class="buttons">
+                    <nuxt-link to="/register">
+                      <a class="button is-success">
+                          <strong>Sign up</strong>
+                      </a></nuxt-link>
+                    <a class="button is-light">
+                      <nuxt-link to="/login">
+                        Log in
+                      </nuxt-link>
+                    </a>
+                </div>
+            </b-navbar-item>
+        </template>
+    </b-navbar>
 </template>
 
 <script>

@@ -1,6 +1,8 @@
 <template>
   <section class="section">
-      <ScrollFeed :key="scrollFeed"/>
+      <div class="container">
+        <ScrollFeed :key="scrollFeed"/>
+      </div>
   </section>
 </template>
 

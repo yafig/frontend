@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'yafig-nuxt',
+    title: 'YAFIG - Yet Another Free (OSS) Instagram-clone',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -38,7 +38,8 @@ module.exports = {
   modules: [
 	  '@nuxtjs/axios',
     '@nuxtjs/auth',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    "@nuxtjs/google-analytics"
   ],
   axios: {
 	  baseURL: 'https://app.fakejson.com'
@@ -53,6 +54,9 @@ module.exports = {
         }
       }
     }
+  },
+  googleAnalytics: {
+    id: "UA-159838013-1"
   },
   plugins: [
     {src: "~plugins/ga.js", mode: "client"}

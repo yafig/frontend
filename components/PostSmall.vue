@@ -1,7 +1,7 @@
 <template>
   <div>
       <nuxt-link :to="'/p/' + id">
-          Post id {{ id }} {{ image }} by {{ userid }}
+            <img :src="img" :alt="'photos by' + userid" width="550"/>
       </nuxt-link>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 export default {
     name: "PostSmall",
-    props: ["id", "image", "userid"]
+    props: ["id", "img", "userid"]
 }
 </script>
 

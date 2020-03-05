@@ -1,6 +1,12 @@
 <template>
   <div>
-        <PostBig v-for="item in id" :key="item" :id="item.id" :userid="item.user"/>
+        <PostBig 
+            v-for="item in posts" 
+            :key="item" 
+            :id="item.id" 
+            :userid="item.user" 
+            :img="item.img"
+        />
   </div>
 </template>
 
@@ -10,8 +16,10 @@ import PostBig from "~/components/PostBig"
 export default {
     data() {
         return{
-            id: [
-                {"id": 1, "user": "fadhil", "image": "http://image.com"}
+            posts: [
+                {"id": 1, "user": "fadhil", "img": "https://i.picsum.photos/id/1010/1230/500.jpg"},
+                {"id": 2, "user": "fadhil", "img": "https://i.picsum.photos/id/1011/1230/500.jpg"},
+                {"id": 3, "user": "fadhil", "img": "https://i.picsum.photos/id/1012/1230/500.jpg"}
             ]
         }
     },
