@@ -1,14 +1,21 @@
 <template>
   <div>
-    Post id {{ id }}
-    posted by <nuxt-link :to="'/u/' + userid">  {{ userid }}</nuxt-link>
+    <img :src="img"/>
+    <br>
+    1 like
+    <br>
+    Sweet canyon
+    posted by <nuxt-link :to="'/u/' + userid">  {{ userid }} </nuxt-link>
+    <br> <strong>Comments:</strong>
+    <br>
+    Heidi: Nice view
   </div>
 </template>
 
 <script>
 export default {
     name: "PostDetail",
-    props: ["id", "userid"]
+    props: ["id", "userid", "img"]
 }
 </script>
 

@@ -17,9 +17,24 @@ export default {
     data() {
         return{
             posts: [
-                {"id": 1, "user": "fadhil", "img": "https://i.picsum.photos/id/1010/1230/500.jpg"},
-                {"id": 2, "user": "fadhil", "img": "https://i.picsum.photos/id/1011/1230/500.jpg"},
-                {"id": 3, "user": "fadhil", "img": "https://i.picsum.photos/id/1012/1230/500.jpg"}
+                {
+                    "id": 111, 
+                    "user": "fadhil", 
+                    "img": "https://i.picsum.photos/id/111/1200/500.jpg",
+                    "caption": "Hello world"
+                },
+                {
+                    "id": 222, 
+                    "user": "fadhil", 
+                    "img": "https://i.picsum.photos/id/222/1200/500.jpg",
+                    "caption": "Black Flies"
+                },
+                {
+                    "id": 555, 
+                    "user": "fadhil", 
+                    "img": "https://i.picsum.photos/id/555/1200/500.jpg",
+                    "caption": "Promise"
+                },
             ]
         }
     },

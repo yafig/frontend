@@ -1,10 +1,10 @@
 <template>
 <section class="section">
     <div class="container">
-        <b-field label="Find a movie">
+        <b-field label="Search your fav pics">
             <b-autocomplete
                 :data="data"
-                placeholder="e.g. Fight Club"
+                placeholder="e.g. ragdoll cat"
                 field="title"
                 :loading="isFetching"
                 @typing="getAsyncData"
@@ -49,9 +49,9 @@ export default {
     data() {
         return{
             posts: [
-                {"id": 1, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1230/500.jpg"},
-                {"id": 2, "user": "fadhil", "img": "https://i.picsum.photos/id/101/1230/500.jpg"},
-                {"id": 3, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1230/500.jpg"}
+                {"id": 100, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1200/500.jpg"},
+                {"id": 101, "user": "fadhil", "img": "https://i.picsum.photos/id/101/1200/500.jpg"},
+                {"id": 102, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1200/500.jpg"}
             ],
             data: [],
             selected: null,
@@ -78,7 +78,9 @@ export default {
                         this.isFetching = false
                     })
             }, 500)
+
     },
+    middleware: "auth",
     components: {
         PostSmall
     }

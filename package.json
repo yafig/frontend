@@ -16,6 +16,8 @@
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/google-analytics": "^2.2.3",
+    "lodash": "^4.17.15",
+    "lodash.debounce": "^4.0.8",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.23"
   },
