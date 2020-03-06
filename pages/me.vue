@@ -51,19 +51,19 @@
 <script>
 import { mapGetters } from 'vuex'
 import PostSmall from "~/components/PostSmall"
+import lodash from "lodash"
 
 export default {
     data() {
         return {
-            // When doing GET request to the post, the array must be
-            // modified into this shape: [[1,2,3], [4,5,6]]
-            // Hint: Use array.pop() to split the arrays
-            posts: [
-                [{"id": 200, "user": "fadhil", "img": "https://i.picsum.photos/id/200/1200/500.jpg"},
+            // Use lodash.chunk to split the array into array of multiples of 3s
+            // https://dustinpfister.github.io/2017/09/13/lodash-chunk/
+            posts: lodash.chunk([
+                {"id": 200, "user": "fadhil", "img": "https://i.picsum.photos/id/200/1200/500.jpg"},
                 {"id": 201, "user": "fadhil", "img": "https://i.picsum.photos/id/201/1200/500.jpg"},
-                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"}],
-                [{"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"}],
-            ],
+                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"},
+                {"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"}
+            ], 3),
         }
     },
     computed: {
