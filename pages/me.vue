@@ -1,5 +1,5 @@
 <template>
-<section class="section">
+  <section class="section">
       <div class="container">
           <div class="content">
               <div class="columns is-mobile is-vcentered">
@@ -28,7 +28,7 @@
           </div>
           
           <div>
-                <h2 class="title">{{ $route.params.id }}</h2>
+                <h2 class="title">{{ loggedInUser }}</h2>
                 <h2 class="subtitle">She's my pride and joy</h2>
           </div>
 
@@ -45,17 +45,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import PostSmall from "~/components/PostSmall"
 
 export default {
     data() {
         return {
             posts: [
-                {"id": 201, "user": "fadhil", "img": "https://i.picsum.photos/id/201/1200/500.jpg"},
-                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"},
-                {"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"}
+                {"id": 100, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1200/500.jpg"},
+                {"id": 101, "user": "fadhil", "img": "https://i.picsum.photos/id/101/1200/500.jpg"},
+                {"id": 102, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1200/500.jpg"}
             ],
         }
+    },
+    computed: {
+        ...mapGetters(['loggedInUser'])
     },
     middleware: "auth",
     components: {
@@ -65,5 +69,4 @@ export default {
 </script>
 
 <style>
-
 </style>
