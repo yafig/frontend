@@ -32,13 +32,15 @@
                 <h2 class="subtitle">She's my pride and joy</h2>
           </div>
 
-        <PostSmall 
-            v-for="post in posts"
-            :id="post.id"
-            :key="post.id" 
-            :img="post.img" 
-            userid="fadhil"
-        />
+        <div class="custom-tile">
+            <PostSmall 
+                v-for="post in posts"
+                :id="post.id"
+                :key="post.id" 
+                :img="post.img" 
+                userid="fadhil"
+            />
+        </div>
 
       </div>
   </section>

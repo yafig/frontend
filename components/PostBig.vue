@@ -3,7 +3,7 @@
             <b-icon icon="account" size="is-medium"/>
             <nuxt-link :to="'/u/' + userid">  {{ userid }}</nuxt-link><br>
     Posted 3 hours ago
-    <nuxt-link :to="'/p/' + id"><img :src="img"/></nuxt-link>
+    <img :src="img"/>
     <br>
     Post id {{ id }}
     <b-taglist>

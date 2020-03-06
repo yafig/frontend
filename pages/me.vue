@@ -27,18 +27,20 @@
             </div>
           </div>
           
-          <div>
-                <h2 class="title">{{ loggedInUser }}</h2>
-                <h2 class="subtitle">She's my pride and joy</h2>
-          </div>
+        <div>
+            <h2 class="title">{{ loggedInUser }}</h2>
+            <h2 class="subtitle">She's my pride and joy</h2>
+        </div>
 
-        <PostSmall 
-            v-for="post in posts"
-            :id="post.id"
-            :key="post.id" 
-            :img="post.img" 
-            userid="fadhil"
-        />
+        <div class="custom-tile">
+            <PostSmall 
+                v-for="post in posts"
+                :id="post.id"
+                :key="post.id" 
+                :img="post.img" 
+                userid="fadhil"
+            />
+        </div>
 
       </div>
   </section>
@@ -52,9 +54,10 @@ export default {
     data() {
         return {
             posts: [
-                {"id": 100, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1200/500.jpg"},
-                {"id": 101, "user": "fadhil", "img": "https://i.picsum.photos/id/101/1200/500.jpg"},
-                {"id": 102, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1200/500.jpg"}
+                {"id": 200, "user": "fadhil", "img": "https://i.picsum.photos/id/200/1200/500.jpg"},
+                {"id": 201, "user": "fadhil", "img": "https://i.picsum.photos/id/201/1200/500.jpg"},
+                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"},
+                {"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"},
             ],
         }
     },
