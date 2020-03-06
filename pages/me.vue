@@ -32,14 +32,16 @@
             <h2 class="subtitle">She's my pride and joy</h2>
         </div>
 
-        <div class="custom-tile">
-            <PostSmall 
-                v-for="post in posts"
-                :id="post.id"
-                :key="post.id" 
-                :img="post.img" 
-                userid="fadhil"
-            />
+        <div class="tile is-ancestor is-vertical">
+            <div class="tile is-parent" v-for="column in posts" :key="column">
+                <PostSmall
+                    v-for="post in column"
+                    :id="post.id"
+                    :key="post.id" 
+                    :img="post.img" 
+                    :userid="post.userid"
+                />
+            </div>
         </div>
 
       </div>
@@ -53,11 +55,14 @@ import PostSmall from "~/components/PostSmall"
 export default {
     data() {
         return {
+            // When doing GET request to the post, the array must be
+            // modified into this shape: [[1,2,3], [4,5,6]]
+            // Hint: Use array.pop() to split the arrays
             posts: [
-                {"id": 200, "user": "fadhil", "img": "https://i.picsum.photos/id/200/1200/500.jpg"},
+                [{"id": 200, "user": "fadhil", "img": "https://i.picsum.photos/id/200/1200/500.jpg"},
                 {"id": 201, "user": "fadhil", "img": "https://i.picsum.photos/id/201/1200/500.jpg"},
-                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"},
-                {"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"},
+                {"id": 202, "user": "fadhil", "img": "https://i.picsum.photos/id/202/1200/500.jpg"}],
+                [{"id": 203, "user": "fadhil", "img": "https://i.picsum.photos/id/203/1200/500.jpg"}],
             ],
         }
     },

@@ -30,14 +30,16 @@
 
 
             <hr>
-            <div class="custom-tile">
-                <PostSmall 
-                    v-for="post in posts"
-                    :id="post.id"
-                    :key="post.id" 
-                    :img="post.img" 
-                    :userid="post.userid"
-                />
+            <div class="tile is-ancestor is-vertical">
+                <div class="tile is-parent" v-for="column in posts" :key="column">
+                    <PostSmall
+                        v-for="post in column"
+                        :id="post.id"
+                        :key="post.id" 
+                        :img="post.img" 
+                        :userid="post.userid"
+                    />
+                </div>
             </div>
             
         </div>
@@ -53,12 +55,16 @@ import axios from "axios"
 export default {
     data() {
         return{
+            // When doing GET request to the post, the array must be
+            // modified into this shape: [[1,2,3], [4,5,6]]
+            // Hint: Use array.pop() to split the arrays
             posts: [
-                {"id": 100, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1200/500.jpg"},
+                [{"id": 100, "user": "fadhil", "img": "https://i.picsum.photos/id/100/1200/500.jpg"},
                 {"id": 101, "user": "fadhil", "img": "https://i.picsum.photos/id/101/1200/500.jpg"},
-                {"id": 102, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1200/500.jpg"},
-                {"id": 103, "user": "fadhil", "img": "https://i.picsum.photos/id/103/1200/500.jpg"}
+                {"id": 102, "user": "fadhil", "img": "https://i.picsum.photos/id/102/1200/500.jpg"}],
+                [{"id": 103, "user": "fadhil", "img": "https://i.picsum.photos/id/103/1200/500.jpg"}]
             ],
+            post_columns: [],
             data: [],
             selected: null,
             isFetching: false,
@@ -93,7 +99,4 @@ export default {
 </script>
 
 <style>
-.custom-tile {
-    column-count: 3;
-}
 </style>
