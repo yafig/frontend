@@ -42,14 +42,14 @@ module.exports = {
     "@nuxtjs/google-analytics"
   ],
   axios: {
-	  baseURL: 'https://app.fakejson.com'
+	  baseURL: 'http://localhost:5000'
   },
   auth: {
     strategies: {
       local: {
         endpoints: {
-          login: {url: 'q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', method: 'post', propertyName: 'token'},
-          user: {url: 'q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', method: 'get', propertyName: 'username'},
+          login: {url: 'login', method: 'post', propertyName: 'token'},
+          user: {url: 'login', method: 'get', propertyName: 'username'},
           logout: false
         }
       }

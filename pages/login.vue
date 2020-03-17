@@ -3,7 +3,10 @@
       <div class="container">
         <div class="columns">
           <div class="column is-4 is-offset-4">
+
               <h2 class='title has-text-centered'>Welcome back!</h2>
+
+                <Notification :message="this.error" v-if="this.error" />
 
                   <form method="post" @submit.prevent="login">
                     <div class="field">
@@ -45,7 +48,8 @@ export default {
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            error: '',
         }
     },
     methods: {
@@ -59,7 +63,8 @@ export default {
                 })
                 this.$router.push('/feed')
             } catch (e) {
-                this.error = e.response.data.message
+                this.error = e.response.data.error_message
+                console.log(this.error)
             }
 
         }

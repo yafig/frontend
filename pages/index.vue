@@ -23,6 +23,9 @@ export default {
   components: {
     AppLogo
   },
+  beforeMount(){
+    this.redirectLoggedInUser()
+  },
   data() {
         return {
             carousel: 0,
@@ -49,6 +52,11 @@ export default {
             value += 50
             return `https://picsum.photos/id/10${value}/1230/500`
         },
+      redirectLoggedInUser(){
+        if (this.$auth.user) {
+          this.$router.push('/feed')
+        }
+      }
     }
 }
 </script>

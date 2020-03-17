@@ -3,6 +3,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-4 is-offset-4">
+
               <h2 class='title has-text-centered'>Register!</h2>
 
               <Notification :message="error" v-if="error" />
@@ -63,7 +64,7 @@ export default {
     methods: {
         async register() {
             try {
-                await this.$axios.post('q/G0Eh7AmU?token=HoyqjBs1mE9itMb1TO7aZw', {
+                await this.$axios.post('register', {
                     username: this.username,
                     email: this.email,
                     password: this.password
@@ -78,7 +79,7 @@ export default {
 
                 this.$router.push('/feed')
             } catch (e) {
-                this.error = e.response.data.message
+                this.error = e.response.data.error_message
             }
         }
     }
