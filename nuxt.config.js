@@ -42,14 +42,14 @@ module.exports = {
     "@nuxtjs/google-analytics"
   ],
   axios: {
-	  baseURL: 'http://localhost:5000'
+	  baseURL: 'http://localhost:8000'
   },
   auth: {
     strategies: {
       local: {
         endpoints: {
-          login: {url: 'login', method: 'post', propertyName: 'token'},
-          user: {url: 'login', method: 'get', propertyName: 'username'},
+          login: {url: 'users/login', method: 'post', propertyName: 'token'},
+          user: {url: 'users', method: 'get', propertyName: 'username'},
           logout: false
         }
       }
