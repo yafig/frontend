@@ -70,12 +70,14 @@ export default {
                     password: this.password
                 })
 
-                await this.$auth.loginWith('local', {
-                    data: {
-                        email: this.email,
-                        password: this.password
-                    }
-                })
+                // We don't need this for now
+                // User has to click login page & sign in from there
+                // await this.$auth.loginWith('local', {
+                //     data: {
+                //         email: this.email,
+                //         password: this.password
+                //     }
+                // })
 
                 this.$router.push('/feed')
             } catch (e) {

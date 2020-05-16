@@ -42,14 +42,14 @@ module.exports = {
     "@nuxtjs/google-analytics"
   ],
   axios: {
-	  baseURL: 'http://localhost:8000'
+	  baseURL: 'https://yafig-django.herokuapp.com'
   },
   auth: {
     strategies: {
       local: {
         endpoints: {
-          login: {url: 'users/login', method: 'post', propertyName: 'token'},
-          user: {url: 'users', method: 'get', propertyName: 'username'},
+          login: {url: 'users/login', method: 'post', propertyName: 'acces'},
+          user: {url: 'users/', method: 'get', propertyName: 'username'},
           logout: false
         }
       }
