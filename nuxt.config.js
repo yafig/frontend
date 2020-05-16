@@ -42,7 +42,7 @@ module.exports = {
     "@nuxtjs/google-analytics"
   ],
   axios: {
-	  baseURL: 'https://yafig-django.herokuapp.com'
+	  baseURL: process.env.BASE_URL || 'http://localhost:8000'
   },
   auth: {
     strategies: {
@@ -51,7 +51,13 @@ module.exports = {
           login: {url: 'users/login', method: 'post', propertyName: 'access'},
           user: {url: 'users/', method: 'get', propertyName: 'username'},
           logout: false
-        }
+        },
+        refreshToken: {
+          property: 'refresh'
+        },
+        tokenType: 'Bearer',
+        // We'll be using cookies once NuxtJS & Django SimpleJWT fully supports them
+        tokenRequired: true
       }
     }
   },
