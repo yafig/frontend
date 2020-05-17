@@ -49,17 +49,27 @@ module.exports = {
       local: {
         endpoints: {
           login: {url: 'users/login', method: 'post', propertyName: 'access'},
-          refresh: {url: 'users/refresh', method: 'post'},
           user: {url: 'users/', method: 'get', propertyName: 'username'},
           logout: false
         },
-        refreshToken: {
-          property: 'refresh'
-        },
-        tokenType: 'Bearer',
         // We'll be using cookies once NuxtJS & Django SimpleJWT fully supports them
         tokenRequired: true
-      }
+      },
+      localRefresh: {
+        scheme: 'refresh',
+        refresh: {
+          url: 'users/refresh'
+        },
+        token: {
+          property: 'access',
+          maxAge: 15
+        },
+        refreshToken: {
+          property: 'refresh',
+          data: 'refresh',
+          maxAge: false
+        }
+      },
     }
   },
   googleAnalytics: {

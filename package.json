@@ -13,13 +13,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/auth": "^4.8.5",
-    "@nuxtjs/axios": "^5.9.5",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/google-analytics": "^2.2.3",
     "lodash": "^4.17.15",
     "lodash.debounce": "^4.0.8",
-    "nuxt": "^2.0.0",
-    "nuxt-buefy": "^0.3.23"
+    "nuxt": "^2.12.2",
+    "nuxt-buefy": "^0.3.30"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
