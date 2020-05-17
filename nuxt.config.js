@@ -49,6 +49,7 @@ module.exports = {
       local: {
         endpoints: {
           login: {url: 'users/login', method: 'post', propertyName: 'access'},
+          refresh: {url: 'users/refresh', method: 'post'},
           user: {url: 'users/', method: 'get', propertyName: 'username'},
           logout: false
         },
