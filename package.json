@@ -16,6 +16,7 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/sentry": "^4.0.3",
     "lodash": "^4.17.15",
     "lodash.debounce": "^4.0.8",
     "nuxt": "^2.12.2",

@@ -38,9 +38,14 @@ module.exports = {
   modules: [
 	  '@nuxtjs/axios',
     '@nuxtjs/auth',
+    '@nuxtjs/sentry',
     'nuxt-buefy',
     "@nuxtjs/google-analytics"
   ],
+  sentry: {
+    dsn: process.env.SENTRY_DSN || 'http://dsn.com',
+    config: {}, // Additional config
+  },
   axios: {
 	  baseURL: process.env.BASE_URL || 'http://localhost:8000'
   },
