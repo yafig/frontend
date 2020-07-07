@@ -25,9 +25,6 @@
             <nuxt-link to="/wth"><b-navbar-item>
               WTH is this?
             </b-navbar-item></nuxt-link>
-            <a href="https://yafig-monolith.fly.dev/doc/"><b-navbar-item>
-              API Doc
-            </b-navbar-item></a>
         </template>
 
         <template slot="end" v-if="isAuthenticated">
